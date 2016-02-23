@@ -127,11 +127,11 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
             // Note that you can apply a projectionFunction to a value like this:
             //  projectionFunction.apply(5)
             // ------------ INSERT CODE HERE! ----------------------------
-            
+            results.add(projectionFunction.apply(itemInList));
         });
         
-        //return results;
-        throw new UnsupportedOperationException("Not implemented yet.");
+        return results;
+        //throw new UnsupportedOperationException("Not implemented yet.");
     }
     
     /*
