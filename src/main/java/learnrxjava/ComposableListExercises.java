@@ -266,9 +266,9 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
         // Chain the filter and map functions to select the id of all videos
         // with a rating of 5.0.
         // ------------ INSERT CODE HERE! -----------------------------------
-        //return newReleases // Complete this expression
+        return newReleases.filter(video -> video.rating == 5).map(video -> video.id);
 
-        throw new UnsupportedOperationException("Not implemented yet.");
+        //throw new UnsupportedOperationException("Not implemented yet.");
     }
 
     /*
