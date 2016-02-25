@@ -148,8 +148,7 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
             new Video(675465, "Fracture", 5.0));
          
         // complete this expression 
-        // return newReleases.map(video -> 
-        throw new UnsupportedOperationException("Not implemented yet.");
+        return newReleases.map(video ->  json("id", video.id, "title", video.title));
     }
 
     /*
