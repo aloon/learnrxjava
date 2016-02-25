@@ -188,11 +188,12 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
         newReleases.forEach(video -> {
             // Insert code here that adds a video to the highRatedVideos list
             // if it has a rating of 5.0.
-
+            if(video.rating == 5) {
+                highRatedVideos.add(video);
+            }
         });
         
-        // return highRatedVideos;
-        throw new UnsupportedOperationException("Not implemented yet.");        
+        return highRatedVideos;
     }
     
     /*
