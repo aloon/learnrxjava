@@ -220,11 +220,13 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
             // Note: you can apply the predicateFunction to a value like this:
             // predicateFunction.test(5)
             // ------------ INSERT CODE HERE! ----------------------------
+             if(predicateFunction.test(itemInList)) {
+                 results.add(itemInList);
+             }
 
         });
 
-        // return results;
-        throw new UnsupportedOperationException("Not implemented yet.");
+        return results;
     }
 
     /*
