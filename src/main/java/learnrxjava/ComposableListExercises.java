@@ -457,8 +457,13 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
         //   {"id": 675465,"title": "Fracture","boxart":"http://cdn-0.nflximg.com/images/2891/Fracture150.jpg" },
         // };
 
-        // return movieLists // Complete this expression!
-        throw new UnsupportedOperationException("Not implemented yet.");
+        return movieLists
+                .concatMap(video->video.videos)
+                .map(video -> json("id", video.id, "title", video.title, "boxart", video.boxarts
+                                                                                    .filter(b -> b.width == 150 && b.height == 200)
+                                                                                    .get(0).url));
+        // Complete this expression!
+        //throw new UnsupportedOperationException("Not implemented yet.");
     }
 
     /*
