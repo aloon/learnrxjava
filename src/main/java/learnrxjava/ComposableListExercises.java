@@ -532,6 +532,7 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
             // ************ INSERT CODE HERE **************
             //  if the list is empty, return this
             // ********************************************
+            return this;
         } else {
             accumulatedValue = this.get(0);
 
@@ -543,14 +544,14 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
                 // Set accumulatedValue to the result of passing accumulatedValue and the list value at the 
                 // counter index to the combiner function.
                 // ****** INSERT CODE HERE ********
-
+                accumulatedValue=combiner.apply(accumulatedValue,this.get(counter));
                 counter++;
             }
 
-            //return ComposableListExercises.of(accumulatedValue);
+            return ComposableListExercises.of(accumulatedValue);
         }
 
-        throw new UnsupportedOperationException("Not implemented yet.");
+        //throw new UnsupportedOperationException("Not implemented yet.");
     }
 
     /*
