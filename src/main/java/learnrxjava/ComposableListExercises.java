@@ -333,10 +333,10 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
 
     ComposableList.of(0, 10, 20, 100, 110, 120, 200, 210, 220)
      */   
-    public <R> ComposableList<R> concatMap(
-        Function<T, ComposableList<R>> projectionFunctionThatReturnsList) {
+    public <R> ComposableList<R> concatMap(Function<T, ComposableList<R>> projectionFunctionThatReturnsList) {
         ComposableListExercises<R> results = new ComposableListExercises<R>();
         for (T itemInList : this) {
+
             // ------------ INSERT CODE HERE! ----------------------------
             // Apply the projection function to each item in the list.
             // This will create _another_ list. Then loop through each
@@ -344,11 +344,13 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
             // Note that you can apply a projectionFunction to a value like this:
             // projectionFunctionThatReturnsList.apply(5)
             // ------------ INSERT CODE HERE! ----------------------------
-
+            for (R ele : projectionFunctionThatReturnsList.apply(itemInList)){
+                results.add(ele);
+            }
         }
         
-        //return results;
-        throw new UnsupportedOperationException("Not implemented yet.");
+        return results;
+        //throw new UnsupportedOperationException("Not implemented yet.");
     }
     
     /*
