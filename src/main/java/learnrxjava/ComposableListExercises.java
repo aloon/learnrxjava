@@ -302,8 +302,12 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
         // Use two nested forEach loops to flatten the movieLists into a list of
         // video ids.
         // ------------   INSERT CODE HERE!  -----------------------------------
-        //return allVideoIdsInMovieLists;
-        throw new UnsupportedOperationException("Not implemented yet.");
+        for (MovieList movieList : movieLists) {
+            for (Video movie : movieList.videos) {
+                allVideoIdsInMovieLists.add(movie.id);
+            }
+        }
+        return allVideoIdsInMovieLists;
     }
     
     /*
