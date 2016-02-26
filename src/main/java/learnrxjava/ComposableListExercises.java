@@ -380,11 +380,11 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
         // return movieLists // finish expression
         // ------------   INSERT CODE HERE!  -----------------------------------
         // **************ANSWER START***************//
-        // return movieLists.
-        //     concatMap(movieList -> 
-        //         movieList.videos.map(video -> video.id));
+        return movieLists.
+             concatMap(movieList ->
+                 movieList.videos.map(video -> video.id));
         // **************ANSWER END***************//
-        throw new UnsupportedOperationException("Not implemented yet.");
+        //throw new UnsupportedOperationException("Not implemented yet.");
     }
     
     /*
