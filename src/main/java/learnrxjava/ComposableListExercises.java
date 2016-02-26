@@ -496,14 +496,13 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
             for (BoxArt boxart: boxarts) {
                 currentSize = boxart.width * boxart.height;
                 if (currentSize > maxSize) {
-                    // ****** INSERT CODE HERE ********
-                    // Assign the largestBoxart to the current boxart, and assign the maxSize to the currentSize.
-                    // ****** INSERT CODE HERE ********
+                    largestBoxart=boxart;
+                    maxSize=currentSize;
                 }
             }
 
-        // return largestBoxart;
-        throw new UnsupportedOperationException("Not implemented yet.");
+        return largestBoxart;
+        //throw new UnsupportedOperationException("Not implemented yet.");
     }
     /*
     Exercise 14: Implement reduce()
