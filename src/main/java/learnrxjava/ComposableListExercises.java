@@ -609,9 +609,10 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
         // returns a list with one item.
 
         // complete the expression below
-        //return ratings.reduce
+        //return ratings.reduce(ratings.get(0),(a,b) -> { if(a>b) return a; else return b;});
+        return ratings.reduce(ratings.get(0),(a,b) -> a > b ? a : b);
 
-        throw new UnsupportedOperationException("Not implemented yet.");
+        //throw new UnsupportedOperationException("Not implemented yet.");
     }
     /*
     Exercise 17: Retrieve url of the largest boxart
