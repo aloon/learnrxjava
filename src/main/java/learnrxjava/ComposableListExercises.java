@@ -992,14 +992,18 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
         );
 
         //------------ COMPLETE THIS EXPRESSION --------------
-        /*
+
+
         return movieLists.
-            concatMap(movieList -> {
+            concatMap(movieList -> movieList.videos)
+                .map(video->{
+                    int time = video.interestingMoments.filter(i->i.type=="Middle").get(0).time;
+                    String url=video.boxarts.reduce((a,b) -> a.width * a.height < b.width * b.height ? a : b).get(0).url;
+                    return json("id", video.id, "title", video.title, "time", time, "url", url);
+                });
 
-            });
-        */
 
-        throw new UnsupportedOperationException("Not implemented yet.");
+        // throw new UnsupportedOperationException("Not implemented yet.");
     }
 
 
