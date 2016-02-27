@@ -630,8 +630,11 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
 
         // You should return a list containing only the largest box art. Remember that reduce always
         // returns a list with one item.
-        // return boxarts.reduce  
-        throw new UnsupportedOperationException("Not implemented yet.");
+        return boxarts.reduce(boxarts.get(0), (a,b) -> {
+            if(a.width * a.height > b.width * b.height) return a;
+            else return b;
+        }).map(b->b.url);
+        //throw new UnsupportedOperationException("Not implemented yet.");
     }
 
     /*
