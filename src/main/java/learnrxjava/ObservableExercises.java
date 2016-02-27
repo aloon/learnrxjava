@@ -75,7 +75,8 @@ public class ObservableExercises {
      * Use reduce to select the maximum value in a list of numbers.
      */
     public Observable<Integer> exerciseReduce(Observable<Integer> nums) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        //return Observable.error(new RuntimeException("Not Implemented"));
+        return nums.reduce((a,b)->a>b?a:b);
     }
 
     /**
