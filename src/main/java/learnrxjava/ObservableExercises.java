@@ -45,7 +45,10 @@ public class ObservableExercises {
      * @return Observable of Integers of Movies.videos.id
      */
     public Observable<Integer> exerciseConcatMap(Observable<Movies> movies) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        //return Observable.error(new RuntimeException("Not Implemented"));
+        return movies
+                .concatMap(m->m.videos)
+                .map(v->v.id);
     }
 
     /**
