@@ -694,7 +694,13 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
                 // exercise simply copy the accumulatedMap into a new map, add the video information to the copy, 
                 // and return the copy.
                 // ************ INSERT CODE HERE ************
-                throw new UnsupportedOperationException("Not implemented yet.");
+                //throw new UnsupportedOperationException("Not implemented yet.");
+                Map<Integer, String> n = accumulatedMap;
+                n.put(video.id, video.title);
+                return n;
+
+                // accumulatedMap.put(video.id, video.title);
+                // return accumulatedMap;
             });
     }
 
