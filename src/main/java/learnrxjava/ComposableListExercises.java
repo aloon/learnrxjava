@@ -902,8 +902,10 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
         );
 
         //... finish this expression
-        // return ComposableListExercises.zip( 
-        throw new UnsupportedOperationException("Not implemented yet.");
+        return ComposableListExercises.zip(videos.map(video -> video.id),
+                                           bookmarks.map(bookmark -> bookmark.id),
+                                           (a, b) -> json("videoId", a, "bookmarkId", b));
+        //throw new UnsupportedOperationException("Not implemented yet.");
     }
 
     /*
