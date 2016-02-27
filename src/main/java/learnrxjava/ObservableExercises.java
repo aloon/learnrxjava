@@ -1,5 +1,6 @@
 package learnrxjava;
 
+import learnrxjava.types.BoxArt;
 import learnrxjava.types.JSON;
 import learnrxjava.types.Movies;
 import rx.Observable;
@@ -91,8 +92,18 @@ public class ObservableExercises {
      * See Exercise 19 of ComposableListExercises
      */
     public Observable<JSON> exerciseMovie(Observable<Movies> movies) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        //return Observable.error(new RuntimeException("Not Implemented"));
+
+        return movies.flatMap(m -> {
+            return m.videos.flatMap(v -> {
+                return v.boxarts.reduce((a, b) -> {
+                    if(a.width * a.height > b.width * b.height) return b;
+                    else return a;
+                }).map(maxBoxart->json("id", v.id, "title", v.title, "boxart", maxBoxart.url));
+            });
+        });
     }
+
 
     /**
      * Combine 2 streams into pairs using zip.
