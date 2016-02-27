@@ -830,10 +830,11 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
         for (int counter = 0; counter < Math.min(videos.size(), bookmarks.size()); counter++) {
             // Insert code here to create a {"videoId" : videoId, "bookmarkId" : bookmarkId} JSON 
             // using json() and add it to the videoIdAndBookmarkIdPairs list.
+            videoIdAndBookmarkIdPairs.add(json("videoId", videos.get(counter).id, "bookmarkId", bookmarks.get(counter).id));
         }
 
-        // return videoIdAndBookmarkIdPairs;
-        throw new UnsupportedOperationException("Not implemented yet.");
+        return videoIdAndBookmarkIdPairs;
+        // throw new UnsupportedOperationException("Not implemented yet.");
     }
 
     /*
@@ -856,10 +857,11 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
         for (int counter = 0; counter < Math.min(left.size(), right.size()); counter++) {
             // Add code here to apply the combinerFunction to the left and right-hand items in the 
             // respective lists, and add the result to the results List
+            results.add(combinerFunction.apply(left.get(counter), right.get(counter)));
         }
 
-        // return results;
-        throw new UnsupportedOperationException("Not implemented yet.");
+        return results;
+        //throw new UnsupportedOperationException("Not implemented yet.");
     }
 
     /*
