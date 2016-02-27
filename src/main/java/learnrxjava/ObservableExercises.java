@@ -34,7 +34,8 @@ public class ObservableExercises {
      * 6-Even
      */
     public Observable<String> exerciseFilterMap(Observable<Integer> nums) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        //return Observable.error(new RuntimeException("Not Implemented"));
+        return nums.filter(n->(n&1)==0).map(n->n.toString()+"-Even");
     }
 
     /**
