@@ -695,12 +695,9 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
                 // and return the copy.
                 // ************ INSERT CODE HERE ************
                 //throw new UnsupportedOperationException("Not implemented yet.");
-                Map<Integer, String> n = accumulatedMap;
-                n.put(video.id, video.title);
-                return n;
 
-                // accumulatedMap.put(video.id, video.title);
-                // return accumulatedMap;
+                accumulatedMap.put(video.id, video.title);
+                return accumulatedMap;
             });
     }
 
@@ -773,13 +770,18 @@ public class ComposableListExercises<T> extends ArrayList<T> implements Composab
         // ];
 
         // Uncomment the code below and finish the expression.
-        /*
-        return movieLists.
-            concatMap(movieList -> {
 
-            })
-         */
-        throw new UnsupportedOperationException("Not implemented yet.");
+        return movieLists
+            .concatMap(movieList -> movieList.videos)
+                .map(video->{
+                    String smallestBoxArt = video.boxarts.reduce((a, b) -> {
+                        if(a.width * a.height > b.width * b.height) return b;
+                        else return a;
+                    }).get(0).url;
+                    return json("id", video.id, "title", video.title, "boxart", smallestBoxArt);
+                });
+
+        //throw new UnsupportedOperationException("Not implemented yet.");
     }
 
     /*
