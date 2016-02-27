@@ -22,7 +22,8 @@ public class ObservableExercises {
      * @param "Hello Name!"
      */
     public Observable<String> exerciseMap(Observable<String> hello) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        //return Observable.error(new RuntimeException("Not Implemented"));
+        return Observable.just("Hello").map(n->n+" "+hello);
     }
 
     /**
