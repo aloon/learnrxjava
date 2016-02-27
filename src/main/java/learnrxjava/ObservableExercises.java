@@ -65,7 +65,8 @@ public class ObservableExercises {
      * @return Observable of Integers of Movies.videos.id
      */
     public Observable<Integer> exerciseFlatMap(Observable<Movies> movies) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        //return Observable.error(new RuntimeException("Not Implemented"));
+        return movies.flatMap(m->m.videos.map(v->v.id));
     }
 
     /**
