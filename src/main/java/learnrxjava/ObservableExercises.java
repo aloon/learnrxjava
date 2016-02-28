@@ -113,7 +113,8 @@ public class ObservableExercises {
      * output -> "one fish", "two fish", "red fish", "blue fish"
      */
     public Observable<String> exerciseZip(Observable<String> a, Observable<String> b) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        return Observable.zip(a,b,(x,y)->x+" "+y);
+        //return Observable.error(new RuntimeException("Not Implemented"));
     }
 
     /**
