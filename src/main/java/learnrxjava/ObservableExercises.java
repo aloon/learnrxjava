@@ -132,7 +132,7 @@ public class ObservableExercises {
      */
     public Observable<String> retry(Observable<String> data) {
         //return Observable.error(new RuntimeException("Not Implemented"));
-        return data.onErrorResumeNext(Observable.just("default-value"));
+        return data.retry();
 
     }
 
