@@ -122,7 +122,8 @@ public class ObservableExercises {
      * and replace it with "default-value".
      */
     public Observable<String> handleError(Observable<String> data) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        //return Observable.error(new RuntimeException("Not Implemented"));
+        return data.onErrorResumeNext(Observable.just("default-value"));
     }
 
     /**
@@ -130,7 +131,9 @@ public class ObservableExercises {
      * with retry capability.
      */
     public Observable<String> retry(Observable<String> data) {
-        return Observable.error(new RuntimeException("Not Implemented"));
+        //return Observable.error(new RuntimeException("Not Implemented"));
+        return data.onErrorResumeNext(Observable.just("default-value"));
+
     }
 
     // This function can be used to build JSON objects within an expression
